@@ -25,7 +25,21 @@
         "policy-enforcer": {
             "credentials": {}
         }
-    }
+    },
+    "test-resource-server-0":{
+        "realm": "broker-realm",
+        "auth-server-url": "https://kc-std-alb-1286372239.ap-south-1.elb.amazonaws.com:8443/",
+        "ssl-required": "external",
+        "resource": "test-resource-server-0",
+        "verify-token-audience": true,
+        "credentials": {
+          "secret": "XE1AiwG6UVtntbYkNaSqOiK4bI37Qz9M"
+        },
+        "confidential-port": 0,
+        "policy-enforcer": {
+          "credentials": {}
+        }
+      }
 
 }
       
