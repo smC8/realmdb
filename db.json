@@ -1,11 +1,33 @@
 {
-    "posts": [
-      {
-        "id": 1,
-        "title": "hello"
-      }
-    ],
-    "profile": {
-      "name": "typicode"
-    }
-  }
+    "clients":[
+            {
+                "realm": "broker-realm",
+                "auth-server-url": "https://kc-std-alb-1286372239.ap-south-1.elb.amazonaws.com:8443/",
+                "ssl-required": "external",
+                "resource": "felix-broker",
+                "verify-token-audience": true,
+                "credentials": {
+                  "secret": "2teTZ0zF3Xzx4SbgsfFL9RA4hQiXBiA9"
+                },
+                "confidential-port": 0,
+                "policy-enforcer": {
+                  "credentials": {}
+                }
+            },
+            {
+                "realm": "test-realm-1",
+                "auth-server-url": "https://kc-std-alb-1286372239.ap-south-1.elb.amazonaws.com:8443/",
+                "ssl-required": "external",
+                "resource": "test-resource-server-1",
+                "verify-token-audience": true,
+                "credentials": {
+                    "secret": "M9LJcXeKtB8Nl3mle46VB9KEMSXWY5JO"
+                },
+                "confidential-port": 0,
+                "policy-enforcer": {
+                    "credentials": {}
+                }
+            }
+    ]
+}
+      
