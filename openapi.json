@@ -1,0 +1,142 @@
+{
+  "openapi": "3.0.2",
+  "info": {
+    "title": "dhynamic-test-fetch",
+    "version": "1.0.0"
+  },
+  "paths": {
+    "/users": {
+      "servers": [
+        {
+          "url": "https://reqres.in/api",
+          "description": ""
+        }
+      ]
+    },
+    "/users/{userId}": {
+      "summary": "Path used to manage a single User.",
+      "description": "The REST endpoint/path used to get, update, and delete single instances of an `User`.  This path contains `GET`, `PUT`, and `DELETE` operations used to perform the get, update, and delete tasks, respectively.",
+      "servers": [
+        {
+          "url": "https://reqres.in/api",
+          "description": ""
+        }
+      ],
+      "get": {
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/User"
+                }
+              }
+            },
+            "description": "Successful response - returns a single `User`."
+          }
+        },
+        "operationId": "getUser",
+        "summary": "Get a User",
+        "description": "Gets the details of a single instance of a `User`."
+      },
+      "put": {
+        "requestBody": {
+          "description": "Updated `User` information.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/User"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "202": {
+            "description": "Successful response."
+          }
+        },
+        "operationId": "updateUser",
+        "summary": "Update a User",
+        "description": "Updates an existing `User`."
+      },
+      "delete": {
+        "responses": {
+          "204": {
+            "description": "Successful response."
+          }
+        },
+        "operationId": "deleteUser",
+        "summary": "Delete a User",
+        "description": "Deletes an existing `User`."
+      },
+      "parameters": [
+        {
+          "name": "userId",
+          "description": "A unique identifier for a `User`.",
+          "schema": {
+            "type": "string"
+          },
+          "in": "path",
+          "required": true
+        }
+      ]
+    }
+  },
+  "components": {
+    "schemas": {
+      "User": {
+        "title": "Root Type for User",
+        "description": "",
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "format": "int32",
+                "type": "integer"
+              },
+              "email": {
+                "type": "string"
+              },
+              "first_name": {
+                "type": "string"
+              },
+              "last_name": {
+                "type": "string"
+              },
+              "avatar": {
+                "type": "string"
+              }
+            }
+          },
+          "support": {
+            "type": "object",
+            "properties": {
+              "url": {
+                "type": "string"
+              },
+              "text": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "example": {
+          "data": {
+            "id": 2,
+            "email": "janet.weaver@reqres.in",
+            "first_name": "Janet",
+            "last_name": "Weaver",
+            "avatar": "https://reqres.in/img/faces/2-image.jpg"
+          },
+          "support": {
+            "url": "https://reqres.in/#support-heading",
+            "text": "To keep ReqRes free, contributions towards server costs are appreciated!"
+          }
+        }
+      }
+    }
+  }
+}
