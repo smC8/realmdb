@@ -27,20 +27,19 @@
 			"credentials": {}
 		}
 	},
-	"resource-server": {
-		"realm": "sandbox",
-		"auth-server-url": "https://kc-std-alb-1286372239.ap-south-1.elb.amazonaws.com:8443/",
-		"ssl-required": "external",
-		"resource": "resource-server",
-		"verify-token-audience": true,
-		"credentials": {
-			"secret": "WaOoegODCoyYCEltFdlNbLc8BO21IJFN"
-		},
-		"use-resource-role-mappings": true,
-		"confidential-port": 0,
-		"policy-enforcer": {
-			"credentials": {}
-		}
-	}
+	"test-resource-server-1":{
+        "realm": "test-realm-1",
+        "auth-server-url": "https://kc-std-alb-1286372239.ap-south-1.elb.amazonaws.com:8443/",
+        "ssl-required": "external",
+        "resource": "test-resource-server-1",
+        "verify-token-audience": true,
+        "credentials": {
+            "secret": "M9LJcXeKtB8Nl3mle46VB9KEMSXWY5JO"
+        },
+        "confidential-port": 0,
+        "policy-enforcer": {
+            "credentials": {}
+        }
+    }
 
 }
